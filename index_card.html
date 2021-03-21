@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Card</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <script type="text/babel">
+            var destination = document.querySelector(".container");
+
+            class Card extends React.Component {
+                render() {
+                    const cardStyle = {
+                        height: '200px',
+                        width: '150px',
+                        boxShadow: '0 0 10px #666'
+                    };
+                    return <div style={cardStyle}>
+                               <Color bgColor={this.props.bgColor}></Color> 
+                               <Label bgColor={this.props.bgColor}></Label>
+                            </div>
+                }
+            }
+
+            class Color extends React.Component {
+                render() {
+                    const colorStyle = {
+                        height: '150px',
+                        backgroundColor: this.props.bgColor
+                    };
+                    return <div style={colorStyle}></div>
+                }
+            }
+
+            class Label extends React.Component {
+                render() {
+                    const labelStyle = {
+                        fontSize: '1rem',
+                        fontWeight: '900',
+                        height: '50px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    };
+                    return <div style={labelStyle}>{this.props.bgColor}</div>
+                }
+            }
+
+            ReactDOM.render(
+                <div>
+                    <Card bgColor='#910'></Card>
+                </div>,
+                destination
+            );
+        </script>
+    </head>
+    <body>
+        <div class="container"></div>
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </body>
+</html>
