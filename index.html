@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Vowels</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <script type="text/babel">
+            var destination = document.querySelector(".container");
+
+            class Letter extends React.Component {
+                render() {
+                    const letterStyle = {
+                        padding: '2rem',
+                        margin: '10px',
+                        color: '#334',
+                        backgroundColor: this.props.bgColor,
+                        display: 'inline-block'
+                    }
+                    return <div style={letterStyle}>{this.props.children}</div>
+                }
+            }
+
+            ReactDOM.render(
+                <div>
+                    <Letter bgColor='#334'>A</Letter>
+                    <Letter bgColor='#415'>E</Letter>
+                    <Letter bgColor='#550'>I</Letter>
+                    <Letter bgColor='#631'>O</Letter>
+                    <Letter bgColor='#910'>U</Letter>
+                </div>,
+                destination
+            );
+        </script>
+    </head>
+    <body>
+        <div class="container"></div>
+    </body>
+</html>
