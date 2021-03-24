@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Counters</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <script type="text/babel">
+            var destination = document.querySelector(".container");
+
+            class Counter extends React.Component {
+                render() {
+                    const counterStyle = {
+                        height: '200px',
+                        width: '200px',
+                        textAlign: 'center',
+                        boxShadow: '0 0 10px #666',
+                        backgroundColor: 'black',
+                        color: '#999'
+                    };
+                    return <div style={counterStyle}>
+                               <CounterDisplay></CounterDisplay>
+                        </div>
+                }
+            }
+
+            class CounterDisplay extends React.Component {
+                state = {
+                    strikes: 0
+                };
+
+                componentDidMount() {
+                    this.timer();
+                }
+
+                timer() {
+                    setInterval(() => {
+                        this.setState({
+                            strikes: this.state.strikes + 100
+                        });
+                    }, 100);
+                }
+                render() {
+                    return <div>{this.state.strikes}</div>
+                }
+            }
+
+            ReactDOM.render(
+                <div>
+                    <Counter></Counter>
+                </div>,
+                destination
+            );
+        </script>
+    </head>
+    <body>
+        <div class="container"></div>
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </body>
+</html>
