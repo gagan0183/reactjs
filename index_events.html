@@ -25,9 +25,16 @@
                     value: 0
                 }
 
-                increase = () => {
+                increase = (event) => {
+                    console.log(event);
+                    let { value } = this.state;
+                    if (event.shiftKey) {
+                        value += 10;
+                    } else {
+                        value++;
+                    }
                     this.setState({
-                        value: this.state.value + 1
+                        value
                     })
                 }
 
