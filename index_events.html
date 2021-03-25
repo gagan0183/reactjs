@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Events</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <script type="text/babel">
+            var destination = document.querySelector(".container");
+
+            class Counts extends React.Component {
+                render() {
+                    const countsStyle = {
+                        fontSize: '2rem',
+                        margin: '10px',
+                        color: 'lightblue',
+                        textAlign: 'center',
+                    }
+                    return <div style={countsStyle}>{this.props.value}</div>
+                }
+            }
+
+            class CountsParent extends React.Component {
+                state = {
+                    value: 0
+                }
+
+                increase = () => {
+                    this.setState({
+                        value: this.state.value + 1
+                    })
+                }
+
+                render() {
+                    const countsParentStyle = {
+                        padding: '2rem',
+                        width: '200px',
+                        height: '200px',
+                        borderRadius: '10px',
+                        backgroundColor: '#334',
+                        margin: '0 auto'
+                    }
+                    const buttonStyle = {
+                        margin: '0 auto',
+                        display: 'block',
+                        fontSize: '2rem',
+                        backgroundColor: 'lightblue',
+                        outline: 'none'
+                    }
+                    return <div style={countsParentStyle}>
+                                <Counts value={this.state.value} />
+                                <button onClick={this.increase} style={buttonStyle}>+</button>
+                           </div>
+                }
+            }
+
+            ReactDOM.render(
+                <CountsParent />,
+                destination
+            );
+        </script>
+    </head>
+    <body>
+        <div class="container"></div>
+    </body>
+</html>
