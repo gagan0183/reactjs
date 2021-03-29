@@ -37,9 +37,24 @@
                 border-color: #111;
                 cursor: pointer;
             }
+
+            #colorHeading {
+                padding: 0;
+                font-family: sans-serif;
+            }
         </style>
         <script type="text/babel">
             var destination = document.querySelector(".container");
+            var heading = document.querySelector("#colorHeading");
+
+            class ColorLabel extends React.Component {
+                render() {
+                    return ReactDOM.createPortal(
+                        ": " + this.props.color,
+                        heading
+                    )
+                }
+            }
 
             class Colors extends React.Component {
                 state = {
@@ -73,6 +88,7 @@
                                 <input type="text" onChange={this.changeColor} ref={(el) => this._input = el}/>
                                 <button typr="submit">Go</button>
                             </form>
+                            <ColorLabel color={this.state.bgColor} />
                         </div>
                     )
                 }
@@ -85,6 +101,7 @@
         </script>
     </head>
     <body>
+        <h1 id="colorHeading">Colors</h1>
         <div class="container"></div>
     </body>
 </html>
