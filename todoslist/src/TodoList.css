@@ -1,0 +1,25 @@
+.todoListItems {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.todoListItems .todoListForm input {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #fff;
+    width: 165px;
+    outline: none;
+}
+
+.todoListItems .todoListForm button {
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid skyblue;
+    background-color: skyblue;
+    color: #fff;;
+}

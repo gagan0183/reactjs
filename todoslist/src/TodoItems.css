@@ -1,0 +1,20 @@
+.todoItems {
+    list-style-type: none;
+}
+
+.todoItems .item {
+    width: 300px;
+    padding: 15px;
+    background-color: skyblue;
+    color: #000;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: skyblue .2s ease-out;
+}
+
+.todoItems .item:hover {
+    background-color: pink;
+    cursor: pointer;
+}
