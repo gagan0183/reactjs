@@ -11,12 +11,12 @@ class Main extends Component {
                 <div>
                     <h1>Simple App</h1>
                     <ul className="header">
-                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink exact to="/">Home</NavLink></li>
                         <li><NavLink to="/stuff">Stuff</NavLink></li>
                         <li><NavLink to="/contacts">Contacts</NavLink></li>
                     </ul>
                     <div className="content">
-                        <Route path="/" component={Home}/>
+                        <Route exact path="/" component={Home}/>
                         <Route path="/stuff" component={Stuff}/>
                         <Route path="/contacts" component={Contacts} />
                     </div>
