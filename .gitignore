@@ -1,1 +1,7 @@
 my-app/node_modules/**
+reduxcounters/node_modules/**
+helloworld/node_modules/**
+ipaddress/node_modules/**
+slidingmenu/node_modules/**
+spa-react/node_modules/**
+todolist/node_modules/**
