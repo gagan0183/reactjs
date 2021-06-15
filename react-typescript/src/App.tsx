@@ -7,7 +7,9 @@ interface Props {
 }
 
 const App: React.FC<Props> = props => {
-  return <div>Hi {props.name}</div>
+  return <div>Hi {props.name}
+    {props.children}
+  </div>
 }
 
 export default App;
