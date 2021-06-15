@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RandomNumber from './Components/RandomNumber';
+import Counts from './Components/Counts';
 
 interface Props {
   name: string;
@@ -13,7 +14,8 @@ const App: React.FC<Props> = props => {
     <div className="children">
       {props.children('one', 'two')}
     </div>
-    <RandomNumber></RandomNumber>
+    <RandomNumber />
+    <Counts />
   </div>
 }
 
