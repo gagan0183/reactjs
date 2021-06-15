@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <App name="Gagan">
-      <p>Here is the app</p>
+      {(one: string, two: string) => <p>Hi we have two attributes {one}, {two}</p>}
     </App>
   </React.StrictMode>,
   document.getElementById('root')
