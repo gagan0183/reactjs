@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import RandomNumber from './Components/RandomNumber';
 import Counts from './Components/Counts';
+import UseEffect from './Components/UseEffect';
 
 interface Props {
   name: string;
@@ -16,6 +17,7 @@ const App: React.FC<Props> = props => {
     </div>
     <RandomNumber />
     <Counts />
+    <UseEffect />
   </div>
 }
 
