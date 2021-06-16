@@ -7,6 +7,9 @@ const UseEffect: React.FC = props => {
     useEffect(() => {
         document.title = `Counter at ${counter1}`;
         console.log('Effect called');
+        return () => {
+            console.log(`Cleanup ${counter1}`)
+        }
     }, [counter1]);
 
     return <>
