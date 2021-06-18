@@ -4,6 +4,7 @@ import './App.css';
 import RandomNumber from './Components/RandomNumber';
 import Counts from './Components/Counts';
 import UseEffect from './Components/UseEffect';
+import HelloClassComponent from './Components/HelloClassComponent';
 
 interface Props {
   name: string;
@@ -18,6 +19,7 @@ const App: React.FC<Props> = props => {
     <RandomNumber />
     <Counts />
     <UseEffect />
+    <HelloClassComponent name="React" />
   </div>
 }
 
