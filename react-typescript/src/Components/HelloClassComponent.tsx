@@ -1,8 +1,11 @@
 import React from "react";
 
-class HelloClassComponent extends React.Component<{name: string}, {}> {
+class HelloClassComponent extends React.Component<{name: string}, {message: string}> {
+    state = {
+        message: "enthusiasm"
+    };
     render() {
-        return <div>Hello from {this.props.name}</div>
+        return <div>Hello from {this.props.name} with {this.state.message}</div>
     }
 }
 
